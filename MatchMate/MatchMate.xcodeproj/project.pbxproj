@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47475F7C39174C60E51FDD32 /* Pods_MatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2DB6F4BA149A93D3FF0410 /* Pods_MatchMate.framework */; };
 		B3894EAF2D7C94A600245D34 /* MatchMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EAE2D7C94A600245D34 /* MatchMateApp.swift */; };
 		B3894EB12D7C94A600245D34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EB02D7C94A600245D34 /* ContentView.swift */; };
 		B3894EB32D7C94A900245D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3894EB22D7C94A900245D34 /* Assets.xcassets */; };
 		B3894EB62D7C94A900245D34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3894EB52D7C94A900245D34 /* Preview Assets.xcassets */; };
 		B3894EB82D7C94A900245D34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EB72D7C94A900245D34 /* Persistence.swift */; };
 		B3894EBB2D7C94A900245D34 /* MatchMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3894EB92D7C94A900245D34 /* MatchMate.xcdatamodeld */; };
+		B3894EC22D7C9D9900245D34 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EC12D7C9D9900245D34 /* MatchCardView.swift */; };
+		B3894EC42D7C9DCE00245D34 /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EC32D7C9DCE00245D34 /* MatchViewModel.swift */; };
+		B3894EC62D7C9DEC00245D34 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894EC52D7C9DEC00245D34 /* MatchModel.swift */; };
+		B3894ECD2D7C9FE000245D34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894ECC2D7C9FE000245D34 /* NetworkManager.swift */; };
+		B3894ECF2D7CA1E500245D34 /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894ECE2D7CA1E500245D34 /* InternetManager.swift */; };
+		B3894ED22D7CA3FE00245D34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3894ED12D7CA3FE00245D34 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34CE1B0CF0C008C947BDDBDA /* Pods-MatchMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.release.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.release.xcconfig"; sourceTree = "<group>"; };
+		A372ED2AB52A0871546ADDED /* Pods-MatchMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.debug.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.debug.xcconfig"; sourceTree = "<group>"; };
 		B3894EAB2D7C94A600245D34 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3894EAE2D7C94A600245D34 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		B3894EB02D7C94A600245D34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +32,13 @@
 		B3894EB52D7C94A900245D34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3894EB72D7C94A900245D34 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B3894EBA2D7C94A900245D34 /* MatchMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMate.xcdatamodel; sourceTree = "<group>"; };
+		B3894EC12D7C9D9900245D34 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
+		B3894EC32D7C9DCE00245D34 /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		B3894EC52D7C9DEC00245D34 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
+		B3894ECC2D7C9FE000245D34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B3894ECE2D7CA1E500245D34 /* InternetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
+		B3894ED12D7CA3FE00245D34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BB2DB6F4BA149A93D3FF0410 /* Pods_MatchMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47475F7C39174C60E51FDD32 /* Pods_MatchMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +58,8 @@
 			children = (
 				B3894EAD2D7C94A600245D34 /* MatchMate */,
 				B3894EAC2D7C94A600245D34 /* Products */,
+				B723B2AFC33BA7C89ED96332 /* Pods */,
+				C74AD1AE5A6363042389270A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,8 +74,12 @@
 		B3894EAD2D7C94A600245D34 /* MatchMate */ = {
 			isa = PBXGroup;
 			children = (
+				B3894ECA2D7C9F8600245D34 /* Model */,
+				B3894ED42D7CACAD00245D34 /* View */,
+				B3894ED32D7CAC8000245D34 /* ViewModel */,
+				B3894ECB2D7C9FAF00245D34 /* Network */,
+				B3894ED02D7CA3F000245D34 /* Utility */,
 				B3894EAE2D7C94A600245D34 /* MatchMateApp.swift */,
-				B3894EB02D7C94A600245D34 /* ContentView.swift */,
 				B3894EB22D7C94A900245D34 /* Assets.xcassets */,
 				B3894EB72D7C94A900245D34 /* Persistence.swift */,
 				B3894EB92D7C94A900245D34 /* MatchMate.xcdatamodeld */,
@@ -73,6 +96,65 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B3894ECA2D7C9F8600245D34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3894EC52D7C9DEC00245D34 /* MatchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3894ECB2D7C9FAF00245D34 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B3894ECC2D7C9FE000245D34 /* NetworkManager.swift */,
+				B3894ECE2D7CA1E500245D34 /* InternetManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B3894ED02D7CA3F000245D34 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B3894ED12D7CA3FE00245D34 /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B3894ED32D7CAC8000245D34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B3894EC32D7C9DCE00245D34 /* MatchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B3894ED42D7CACAD00245D34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3894EB02D7C94A600245D34 /* ContentView.swift */,
+				B3894EC12D7C9D9900245D34 /* MatchCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B723B2AFC33BA7C89ED96332 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A372ED2AB52A0871546ADDED /* Pods-MatchMate.debug.xcconfig */,
+				34CE1B0CF0C008C947BDDBDA /* Pods-MatchMate.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C74AD1AE5A6363042389270A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB2DB6F4BA149A93D3FF0410 /* Pods_MatchMate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3894EBE2D7C94A900245D34 /* Build configuration list for PBXNativeTarget "MatchMate" */;
 			buildPhases = (
+				0245E9CFB5B2AFCE73C89F47 /* [CP] Check Pods Manifest.lock */,
 				B3894EA72D7C94A600245D34 /* Sources */,
 				B3894EA82D7C94A600245D34 /* Frameworks */,
 				B3894EA92D7C94A600245D34 /* Resources */,
+				162136C9B9FD438457114EFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,14 +222,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0245E9CFB5B2AFCE73C89F47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MatchMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		162136C9B9FD438457114EFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B3894EA72D7C94A600245D34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3894ECF2D7CA1E500245D34 /* InternetManager.swift in Sources */,
 				B3894EB82D7C94A900245D34 /* Persistence.swift in Sources */,
+				B3894EC62D7C9DEC00245D34 /* MatchModel.swift in Sources */,
 				B3894EB12D7C94A600245D34 /* ContentView.swift in Sources */,
 				B3894EBB2D7C94A900245D34 /* MatchMate.xcdatamodeld in Sources */,
+				B3894ECD2D7C9FE000245D34 /* NetworkManager.swift in Sources */,
+				B3894EC22D7C9D9900245D34 /* MatchCardView.swift in Sources */,
+				B3894ED22D7CA3FE00245D34 /* Constant.swift in Sources */,
+				B3894EC42D7C9DCE00245D34 /* MatchViewModel.swift in Sources */,
 				B3894EAF2D7C94A600245D34 /* MatchMateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +406,7 @@
 		};
 		B3894EBF2D7C94A900245D34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A372ED2AB52A0871546ADDED /* Pods-MatchMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -282,6 +415,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5TCDT2358B;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -303,6 +437,7 @@
 		};
 		B3894EC02D7C94A900245D34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34CE1B0CF0C008C947BDDBDA /* Pods-MatchMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +446,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5TCDT2358B;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
