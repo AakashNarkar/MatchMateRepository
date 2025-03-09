@@ -8,41 +8,19 @@
 import SwiftUI
 
 struct MatchCardView: View {
-    let match: Match
-    @ObservedObject var viewModel: MatchViewModel
+    @Binding var match: Match
+    @Environment(\.managedObjectContext) var viewContext
     
     var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: match.imageUrl)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(height: 200)
-            .cornerRadius(10)
-            
-            Text("\(match.name), \(match.age)")
-                .font(.headline)
-                .padding(.top, 5)
-            
-            HStack {
-                Button("Accept") {
-                    viewModel.updateMatch(match, status: "Accepted")
-                }
-                .buttonStyle(.borderedProminent)
-                
-                Button("Decline") {
-                    viewModel.updateMatch(match, status: "Declined")
-                }
-                .buttonStyle(.bordered)
-            }
+        VStack(spacing: 16) {
+            MatchCardDescription(match: $match)
         }
+        .frame(width: UIScreen.main.bounds.width - 48, height: UIScreen.main.bounds.height / 2.8)
         .padding()
     }
 }
 
 #Preview {
-    MatchCardView(match: Match(from: User(name: Name(first: "ABC", last: "XYZ"), dob: DOB(age: 18), picture: Picture(large: "abc"))),
-                  viewModel: MatchViewModel(networkManager: NetworkManager()))
+    let sampleMatch = Match(fullName: "Abc")
+    return MatchCardView(match: .constant(sampleMatch))
 }
-

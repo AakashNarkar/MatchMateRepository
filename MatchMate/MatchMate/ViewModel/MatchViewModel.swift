@@ -10,6 +10,7 @@ import SwiftUI
 class MatchViewModel: ObservableObject {
     @Published var matches: [Match] = []
     @Published var isLoading = false  // Added loader state
+    
     private let apiURL = AppConstant.apiURL
     private var page = 1
     private var networkManager: NetworkManagerProtocol
@@ -27,15 +28,25 @@ class MatchViewModel: ObservableObject {
             guard let self = self else { return }
             self.isLoading = false
             if let results = response?.results {
-                self.matches.append(contentsOf: results.map { Match(from: $0) })
+                let newMatches = self.getMatches(results)
+                newMatches.forEach { self.matches.append($0) }
                 self.page += 1
             }
         }
     }
     
-    func updateMatch(_ match: Match, status: String) {
-        if let index = matches.firstIndex(where: { $0.id == match.id }) {
-            matches[index].status = status
+    func getMatches(_ results: [Result]) -> [Match] {
+        let matches = results.map { response in
+            Match(
+                value: response.id?.value ?? "",
+                fullName: "\(response.name?.first ?? "") \(response.name?.last ?? "")",
+                address: """
+                \(response.location?.street?.number ?? 0) \(response.location?.street?.name ?? ""), \
+                \(response.location?.city ?? ""), \(response.location?.state ?? ""), \(response.location?.country ?? "")
+                """,
+                image: response.picture?.large ?? ""
+            )
         }
+        return matches
     }
 }
