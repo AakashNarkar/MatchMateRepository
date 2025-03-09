@@ -21,6 +21,8 @@ Clean UI: Follows iOS design guidelines to provide an intuitive and visually app
 
 Error Handling: Implements robust error handling for API calls, database operations, and network connectivity.
 
+Pagination: Implements pagination to load more match cards as the user scrolls, providing a seamless user experience.
+
 
 *Technologies Used*
 SwiftUI: For building the user interface.
