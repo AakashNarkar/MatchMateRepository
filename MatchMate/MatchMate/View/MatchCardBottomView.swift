@@ -11,43 +11,41 @@ struct MatchCardBottomView: View {
     @Binding var match: Match
     
     var body: some View {
-        ZStack {
-            HStack {
-                Button(action: {
-                    withAnimation {
-                        match.isAccepted = false
-                    }
-                }) {
-                    Circle()
-                        .fill()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.red)
-                        .overlay(
-                            Image(systemName: "xmark")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.white)
-                        )
+        HStack {
+            Button(action: {
+                withAnimation {
+                    match.isAccepted = true
                 }
-                Spacer()
-                
-                Button(action: {
-                    withAnimation {
-                        match.isAccepted = true
-                    }
-                }) {
-                    Circle()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.green)
-                        .overlay(
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.white)
-                        )
-                }
+            }) {
+                Text(AppConstant.accept)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 15)
+                    .background(Color(.green))
+                    .cornerRadius(15, corners: .allCorners)
             }
+            .buttonStyle(PlainButtonStyle()) // Disables List interference
+            
+            Spacer()
+            
+            Button(action: {
+                withAnimation {
+                    match.isAccepted = false
+                }
+            }) {
+                Text(AppConstant.decline)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 15)
+                    .background(Color(.red))
+                    .cornerRadius(15, corners: .allCorners)
+            }
+            .buttonStyle(PlainButtonStyle()) // Disables List interference
         }
+        .allowsHitTesting(true) // Ensures buttons capture taps
     }
 }
+
 
 #Preview {
     let sampleMatch = Match(fullName: "Abc")

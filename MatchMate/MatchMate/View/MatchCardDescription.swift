@@ -12,14 +12,10 @@ struct MatchCardDescription: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: match.image ?? "")) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .scaledToFill()
-            .clipShape(RoundedRectangle(cornerRadius: 32))
-            .shadow(radius: 5)
+            CardAysncImageView(viewModel: AsyncImageViewModel(imageAssest: match.image ?? ""))
+                .scaledToFill()
+                .clipShape(RoundedRectangle(cornerRadius: 32))
+                .shadow(radius: 5)
             VStack {
                 Spacer()
                 
@@ -46,7 +42,7 @@ struct MatchCardDescription: View {
                                 .background(.white)
                                 .padding(.horizontal)
                             
-                            Text(isAccepted ? "Accepted" : "Declined")
+                            Text(isAccepted ? AppConstant.accepted : AppConstant.declined)
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(isAccepted ? .green : .red)
                                 .padding()

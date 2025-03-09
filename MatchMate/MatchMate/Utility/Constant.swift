@@ -15,4 +15,8 @@ enum AppConstant {
     static let kReachabilityDidChangeNotification = "kReachabilityDidChangeNotification"
     static let offline = "offline"
     static let online = "online"
+    static let accepted = "Accepted"
+    static let declined = "Declined"
+    static let accept = "Accept"
+    static let decline = "Decline"
 }

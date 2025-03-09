@@ -30,6 +30,7 @@ class MatchViewModel: ObservableObject {
             if let results = response?.results {
                 let newMatches = self.getMatches(results)
                 newMatches.forEach { self.matches.append($0) }
+                self.saveContent()
                 self.page += 1
             }
         }
@@ -48,5 +49,32 @@ class MatchViewModel: ObservableObject {
             )
         }
         return matches
+    }
+    
+    func saveContent() {
+        do {
+            let jsonData = try JSONEncoder().encode(self.matches)
+            DataModel.save(data: jsonData, forKey: "MatchMate")
+            print("Data saved successfully: \(jsonData)")
+        } catch {
+            print("Failed to encode content: \(error)")
+        }
+    }
+
+    
+    func getSavedContent() {
+        guard let cachedData = DataModel.getData(key: "MatchMate") else {
+            print("No cached data found")
+            return
+        }
+        do {
+            let decoder = JSONDecoder()
+            let savedContent = try decoder.decode([Match].self, from: cachedData)
+            DispatchQueue.main.async {
+                self.matches = savedContent
+            }
+        } catch {
+            print("Failed to decode cached data into Match: \(error)")
+        }
     }
 }

@@ -8,5 +8,6 @@ target 'MatchMate' do
   # Pods for MatchMate
 
   pod 'Alamofire'
-
+  pod 'SDWebImageSwiftUI'
+  
 end

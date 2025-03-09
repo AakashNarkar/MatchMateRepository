@@ -9,20 +9,21 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @StateObject var viewModel = MatchViewModel(networkManager: NetworkManager())
-    @State var selected: Match = Match(fullName: "", image: "")
+    @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var viewModel: MatchViewModel
     @State var showNavigation: Bool = false
+    @State var selected: Match = Match(fullName: "", image: "")
     @Namespace private var namespace
     
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
-                HeaderView()
+                HeaderView(isBackNavigationVisible: showNavigation, show: $showNavigation)
                 List {
-                    ForEach(viewModel.matches, id: \.identifier) { match in
-                        MatchCardView(match: Binding.constant(match))
+                    ForEach($viewModel.matches, id: \.identifier) { match in
+                        MatchCardView(match: match)
                             .onAppear {
-                                if match == viewModel.matches.last {
+                                if match.wrappedValue == viewModel.matches.last {
                                     viewModel.fetchMatches()
                                 }
                             }
@@ -30,12 +31,11 @@ struct ContentView: View {
                             .transition(.scale(scale: 0.5, anchor: .center))
                             .onTapGesture {
                                 showNavigation.toggle()
-                                selected = match
+                                selected = match.wrappedValue
                             }
-                            .matchedGeometryEffect(id: match.identifier, in: namespace)
                     }
                     
-                    // Show loader at the end of the list
+//                     Show loader at the end of the list
                     if viewModel.isLoading {
                         HStack {
                             Spacer()
@@ -47,12 +47,12 @@ struct ContentView: View {
             }
             .background(.gray.opacity(0.05))
             .onReceive(NotificationCenter.default.publisher(for: .networkDidChange), perform: { object in
-                if let status = object.object as? String, status == "online" {
-//                    self.getData()
+                if let status = object.object as? String, status == AppConstant.online {
+                    viewModel.fetchMatches()
                 }
             })
             .onAppear {
-                viewModel.fetchMatches()
+                viewModel.getSavedContent()
             }
             
             if showNavigation {
@@ -66,5 +66,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    ContentView(viewModel: MatchViewModel(networkManager: NetworkManager())).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

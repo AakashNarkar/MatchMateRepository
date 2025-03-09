@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct HeaderView: View {
+    var isBackNavigationVisible: Bool
+    @Binding var show: Bool
+    
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: isBackNavigationVisible ? "chevron.left" : "star.fill")
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                    .padding(.leading)
+                    .onTapGesture {
+                        isBackNavigationVisible ? show.toggle() : nil
+                    }
                 VStack(alignment: .leading) {
                     Text(AppConstant.navigationTitle)
                         .font(.system(size: 24, weight: .heavy))
@@ -18,7 +28,6 @@ struct HeaderView: View {
                 }
                 Spacer()
             }
-            .padding(.horizontal, 16)
             .background(Color(red: 236/255, green: 102/255, blue: 101/255))
             .foregroundStyle(.white)
         }
@@ -26,5 +35,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(isBackNavigationVisible: true, show: .constant(true))
 }
