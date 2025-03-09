@@ -22,6 +22,8 @@ struct ContentView: View {
                 List {
                     ForEach($viewModel.matches, id: \.identifier) { match in
                         MatchCardView(match: match)
+                            .listRowSeparator(.hidden) // Hide the divider
+                            .listRowBackground(Color.clear)
                             .onAppear {
                                 if match.wrappedValue == viewModel.matches.last {
                                     viewModel.fetchMatches()
@@ -44,6 +46,8 @@ struct ContentView: View {
                         }
                     }
                 }
+                .scrollIndicators(.hidden)
+                .listStyle(.plain)
             }
             .background(.gray.opacity(0.05))
             .onReceive(NotificationCenter.default.publisher(for: .networkDidChange), perform: { object in
